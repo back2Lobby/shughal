@@ -1,0 +1,11 @@
+<ifModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^People&Friends$ ./friends_page.php
+RewriteRule ^Inbox$ ./inbox.php
+RewriteRule ^Settings$ ./settings.php
+RewriteRule ^eControl$ ./econtrol.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ ?profile_username=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/$ ?profile_username=$1
+</ifModule>
